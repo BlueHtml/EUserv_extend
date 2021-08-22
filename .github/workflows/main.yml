@@ -1,0 +1,29 @@
+name: Run
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+
+jobs:
+  build:
+
+    if: github.actor == github.repository_owner
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@main
+    - name: Run
+      run: |
+        weekday=`date +%u`
+        echo $weekday
+        
+        if [ $weekday == '3' ] || [ $weekday == '7' ];then
+        pip3 install --upgrade requests beautifulsoup4
+        python3 main.py
+        else
+        echo "日期不对，不执行"
+        fi        
+      env:
+        USERNAME: ${{ secrets.USERNAME }}
+        PASSWORD: ${{ secrets.PASSWORD }}
+        PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
