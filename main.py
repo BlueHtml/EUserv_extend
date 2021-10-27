@@ -27,7 +27,7 @@ COOL_PUSH_SKEY = ''
 COOL_PUSH_MODE = 'send'
 
 # PushPlus https://pushplus.hxtrip.com/message
-PUSHPLUS_TOKEN = os.environ["PUSHPLUS_TOKEN"]  # PushPlus Token
+PUSH_PLUS_TOKEN = os.environ["PUSHPLUS_TOKEN"]  # PushPlus Token
 
 # Telegram Bot Push https://core.telegram.org/bots/api#authorizing-your-bot
 TG_BOT_TOKEN = ''  # 通过 @BotFather 申请获得，示例：1077xxx4424:AAFjv0FcqxxxxxxgEMGfi22B4yh15R5uw
